@@ -1,0 +1,28 @@
+.characters-list {
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid #000;
+    border-radius: 5px;
+  }
+
+  &__name {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  &__image {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    border-radius: 50%;
+  }
+
+  &__house {
+    margin-top: 1rem;
+    text-align: center;
+  }
+}
