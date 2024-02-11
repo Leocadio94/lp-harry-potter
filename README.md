@@ -1,30 +1,20 @@
 # LP Harry Potter
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## O que precisa fazer
 
-Currently, two official plugins are available:
+Criar uma Landing Page com as informações da API do Harry Potter. Com Imagem, Nome, Data de Nascimento, Casa, Patrono, Ator e se está vivo. O layout é livre, apenas respeitando o espaçamento entre os blocos e organizando corretamente os itens.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Link da API**: https://hp-api.onrender.com/api/characters
 
-## Expanding the ESLint configuration
+## Ferramentas
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+A LP deverá ser feita com React. Utilizar para estilização o SCSS (Sass). Pode escolher entre utilizar API Rest ou GraphQL. GITHUB para o versionamento de GIT.
 
-- Configure the top-level `parserOptions` property like this:
+## Instruções
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: "latest",
-    sourceType: "module",
-    project: ["./tsconfig.json", "./tsconfig.node.json"],
-    tsconfigRootDir: __dirname,
-  },
-};
-```
+A ideia aqui é saber como você desenvolve o código e como é a sua organização. O quanto você se preocupa com o Clean Code e com o versionamento do GIT para manter a sintonia entre a equipe. Então, organize da melhor maneira e use o commit para acompanharmos a evolução do projeto.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Informações Adicionais
+
+Hospedar o projeto em uma plataforma (Vercel, Heroku). Inserir no Readme as
+informações necessárias para rodar o projeto e o link gerado na hospedagem.

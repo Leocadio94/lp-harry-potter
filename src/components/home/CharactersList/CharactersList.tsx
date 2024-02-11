@@ -2,6 +2,10 @@ export type Character = {
   image?: string;
   name?: string;
   house?: string;
+  dateOfBirth?: string;
+  alive?: string;
+  patronus?: string;
+  actor?: string;
 };
 
 export interface CharacterListProps {
@@ -20,12 +24,29 @@ const CharactersList = ({ characters }: CharacterListProps) => {
           <li key={character.name} className="characters-list__item">
             <img
               className="characters-list__image"
-              src={character.image}
-              alt={character.name}
+              src={
+                character?.image ||
+                `https://placehold.co/365x520?text=${character?.name}`
+              }
+              alt={character?.name}
             />
 
             <h2 className="characters-list__name">{character.name}</h2>
-            <p className="characters-list__house">{character.house}</p>
+            <p className="characters-list__house">Casa: {character?.house}</p>
+            <p className="characters-list__date-of-birth">
+              Data de Nascimento:{" "}
+              {character?.dateOfBirth &&
+                character.dateOfBirth.split("-").join("/")}
+            </p>
+            <p className="characters-list__alive">
+              Estado: {character?.alive ? "Vivo" : "Morto"}
+            </p>
+
+            <p className="characters-list__patronus">
+              Patrono: {character?.patronus || "Não possui"}
+            </p>
+
+            <p className="characters-list__actor">Ator: {character?.actor}</p>
           </li>
         ))}
       </ul>
