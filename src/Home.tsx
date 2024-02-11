@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Loading from "./components/common/Loading";
 import CharactersList from "./components/home/CharactersList";
 import { Character } from "./components/home/CharactersList/CharactersList";
 import "./styles/home.scss";
@@ -38,11 +39,7 @@ function Home() {
       </section>
 
       <section className="home__content">
-        {loading ? (
-          <p className="home__loading">Carregando...</p>
-        ) : (
-          <CharactersList characters={data} />
-        )}
+        {loading ? <Loading /> : <CharactersList characters={data} />}
       </section>
     </main>
   );
