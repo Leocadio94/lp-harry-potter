@@ -2,6 +2,7 @@
   &__list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    padding: 0;
     gap: 1rem;
     margin-top: 2rem;
     justify-content: space-between;
@@ -24,8 +25,11 @@
     &:hover,
     &:active,
     &:focus {
+      // transform: rotate(1deg) scale(1.1);
       transform: scale(1.1);
+      box-shadow: 0 0 30px rgba(0, 0, 0, 1);
       z-index: 2;
+      transition: all 0.3s ease-in-out;
 
       .characters-list__image {
         opacity: 0.8;

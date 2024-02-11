@@ -30,17 +30,21 @@ function Home() {
   }, []);
 
   return (
-    <div className="home">
-      <img src={HpIcon} className="home__logo" alt="Logo Harry Potter" />
+    <main className="home">
+      <section className="home__title--wrapper">
+        <img src={HpIcon} className="home__logo" alt="Logo Harry Potter" />
 
-      <h1 className="home__title">Landing Page Harry Potter</h1>
+        <h1 className="home__title">Landing Page Harry Potter</h1>
+      </section>
 
-      {loading ? (
-        <p className="home__loading">Carregando...</p>
-      ) : (
-        <CharactersList characters={data} />
-      )}
-    </div>
+      <section className="home__content">
+        {loading ? (
+          <p className="home__loading">Carregando...</p>
+        ) : (
+          <CharactersList characters={data} />
+        )}
+      </section>
+    </main>
   );
 }
 

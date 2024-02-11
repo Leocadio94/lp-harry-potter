@@ -19,9 +19,9 @@ const CharactersList = ({ characters }: CharacterListProps) => {
 
   return (
     <div className="characters-list__wrapper">
-      <ul className="characters-list__list">
+      <div className="characters-list__list">
         {characters.map((character) => (
-          <li key={character.name} className="characters-list__item">
+          <div key={character.name} className="characters-list__item">
             <img
               className="characters-list__image"
               src={
@@ -47,9 +47,9 @@ const CharactersList = ({ characters }: CharacterListProps) => {
             </p>
 
             <p className="characters-list__actor">Ator: {character?.actor}</p>
-          </li>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };
