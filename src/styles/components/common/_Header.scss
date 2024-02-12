@@ -1,0 +1,37 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
+
+  &__list {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    list-style: none;
+    gap: 0 14px;
+    padding: 10px 0;
+  }
+
+  &__link {
+    color: #fff;
+    text-decoration: none;
+    font-family: $main-font;
+    font-size: 1.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+
+    &--active {
+      color: #f1c40f;
+    }
+
+    &:hover {
+      color: #f1c40f;
+      opacity: 0.8;
+    }
+  }
+}
