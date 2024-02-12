@@ -1,6 +1,6 @@
 // MOBILE
-@mixin mobile {
-  @media (max-width: 768px) {
+@mixin phone {
+  @media (max-width: 380px) {
     @content;
   }
 }

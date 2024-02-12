@@ -59,3 +59,10 @@ p {
   margin: 0;
   padding: 0;
 }
+
+.container {
+  width: 100%;
+  max-width: 1366px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}

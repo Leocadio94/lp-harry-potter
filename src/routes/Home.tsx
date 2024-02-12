@@ -6,7 +6,6 @@ import HpIcon from "/images/hp.svg";
 
 function Home() {
   const { data, error, loading } = useFetchHarryPotterCharacters();
-  console.log("🚀 ~ Home ~ data, error, loading:", data, error, loading);
 
   if (error) {
     console.error("Erro ao buscar os personagens de Harry Potter");
@@ -15,17 +14,17 @@ function Home() {
   }
 
   return (
-    <main className="home">
-      <section className="home__title--wrapper">
+    <section className="home">
+      <div className="home__title--wrapper">
         <img src={HpIcon} className="home__logo" alt="Logo Harry Potter" />
 
         <h1 className="home__title">Harry Potter</h1>
-      </section>
+      </div>
 
-      <section className="home__content">
+      <div className="home__content">
         {loading ? <Loading /> : <CharactersList characters={data} />}
-      </section>
-    </main>
+      </div>
+    </section>
   );
 }
 

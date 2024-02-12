@@ -36,7 +36,7 @@ export const useFetchHarryPotterCharacters = () => {
 
   useEffect(() => {
     fetchCharacters();
-  }, [fetchCharacters]);
+  }, []);
 
   return { data, loading, error };
 };

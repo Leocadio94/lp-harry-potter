@@ -33,7 +33,10 @@ const CharactersList = ({ characters }: CharacterListProps) => {
           >
             <div className="characters-list__inner">
               <h2 className="characters-list__name">
-                <span className="characters-list__name--title">
+                <span
+                  className="characters-list__name--title"
+                  title={character?.name}
+                >
                   {character.name}
                 </span>
 
