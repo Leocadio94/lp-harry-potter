@@ -6,17 +6,19 @@ import {
   GiSnakeBite,
 } from "react-icons/gi";
 
-export const renderHarryPotterHouseIcon = (house?: string) => {
+const DEFAULT_SIZE = "1em";
+
+export const renderHarryPotterHouseIcon = (house?: string, size?: string) => {
   switch (house) {
     case "Gryffindor":
-      return <GiLion />;
+      return <GiLion size={size || DEFAULT_SIZE} />;
     case "Slytherin":
-      return <GiSnakeBite />;
+      return <GiSnakeBite size={size || DEFAULT_SIZE} />;
     case "Hufflepuff":
-      return <GiRaccoonHead />;
+      return <GiRaccoonHead size={size || DEFAULT_SIZE} />;
     case "Ravenclaw":
-      return <GiEagleEmblem />;
+      return <GiEagleEmblem size={size || DEFAULT_SIZE} />;
     default:
-      return <GiMedievalGate />;
+      return <GiMedievalGate size={size || DEFAULT_SIZE} />;
   }
 };

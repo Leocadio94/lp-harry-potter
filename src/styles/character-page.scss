@@ -1,0 +1,9 @@
+// VARIABLES
+@import "variables/global";
+@import "mixins/all";
+
+// COMMON STYLES
+@import "components/character-page/character-page";
+
+// CharacterInformation
+@import "components/character-page/CharacterInformation";

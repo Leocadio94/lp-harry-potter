@@ -17,6 +17,7 @@
   }
 
   &__item {
+    text-decoration: none;
     background-color: #242424;
     background: url("/images/texture-letter.jpg") no-repeat center;
     border: 1px solid #000;
@@ -118,7 +119,7 @@
     background-color: #f9f3ee;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
     padding: 20px 14px;
     border-radius: 0 0 8px 8px;

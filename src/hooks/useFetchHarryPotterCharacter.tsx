@@ -1,19 +1,19 @@
 import { useEffect, useMemo, useState } from "react";
 import { Character } from "../typings/typings";
 
-const API_URL = "https://hp-api.onrender.com/api/characters";
+const API_URL = "https://hp-api.onrender.com/api/character";
 
-export const useFetchHarryPotterCharacters = () => {
-  const [data, setData] = useState<Character[]>([]);
+export const useFetchHarryPotterCharacter = (id?: string) => {
+  const [data, setData] = useState<Character | undefined>();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
 
-  const fetchCharacters = useMemo(
+  const fetchCharacter = useMemo(
     () => async () => {
       setLoading(true);
 
       try {
-        const response = await fetch(API_URL);
+        const response = await fetch(`${API_URL}/${id}`);
         const data = await response.json();
 
         setLoading(false);
@@ -22,9 +22,9 @@ export const useFetchHarryPotterCharacters = () => {
           return;
         }
 
-        setData(data);
+        setData(data[0]);
       } catch (error) {
-        console.error("Error fetching Harry Potter characters", error);
+        console.error("Error fetching Harry Potter character", error);
 
         setError(true);
       } finally {
@@ -35,7 +35,7 @@ export const useFetchHarryPotterCharacters = () => {
   );
 
   useEffect(() => {
-    fetchCharacters();
+    fetchCharacter();
   }, []);
 
   return { data, loading, error };

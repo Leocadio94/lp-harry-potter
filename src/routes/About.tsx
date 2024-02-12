@@ -1,3 +1,5 @@
+import "../styles/about.scss";
+
 const About = () => {
   return (
     <div className="about">
