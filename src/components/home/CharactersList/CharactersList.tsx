@@ -26,8 +26,11 @@ const CharactersList = ({ characters }: CharacterListProps) => {
   return (
     <div className="characters-list__wrapper">
       <div className="characters-list__list">
-        {characters.map((character) => (
-          <div key={character.name} className="characters-list__item">
+        {characters.map((character, index) => (
+          <div
+            key={`character-${character.name}-${index}`}
+            className="characters-list__item"
+          >
             <div className="characters-list__inner">
               <h2 className="characters-list__name">
                 <span className="characters-list__name--title">
