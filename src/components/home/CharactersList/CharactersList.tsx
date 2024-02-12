@@ -4,7 +4,11 @@ import { IoCalendarOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { Character } from "../../../typings/typings";
 import { renderHarryPotterHouseIcon } from "../../../utils/renderHarryPotterHouseIcon";
-import { transformDate, translateHarryPotterHouse } from "../../../utils/utils";
+import {
+  transformDate,
+  translateHarryPotterHouse,
+  translateHarryPotterPatronus,
+} from "../../../utils/utils";
 
 export interface CharacterListProps {
   characters: Character[];
@@ -81,7 +85,9 @@ const CharactersList = ({ characters }: CharacterListProps) => {
                     <strong className="characters-list__text-label">
                       Patrono:
                     </strong>{" "}
-                    {character?.patronus || "Não possui"}
+                    {translateHarryPotterPatronus(
+                      character?.patronus?.toLowerCase()
+                    )}
                   </p>
                 )}
 
@@ -104,7 +110,13 @@ const CharactersList = ({ characters }: CharacterListProps) => {
                   <strong className="characters-list__text-label">
                     Estado:
                   </strong>{" "}
-                  {character?.alive ? "Vivo" : "Morto"}
+                  {character?.alive
+                    ? character?.gender === "male"
+                      ? "Vivo"
+                      : "Viva"
+                    : character?.gender === "male"
+                    ? "Morto"
+                    : "Morta"}
                 </p>
               </div>
             </div>

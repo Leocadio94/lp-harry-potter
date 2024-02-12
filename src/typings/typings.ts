@@ -7,4 +7,6 @@ export type Character = {
   alive?: string;
   patronus?: string;
   actor?: string;
+  gender?: string;
+  wizard?: string;
 };

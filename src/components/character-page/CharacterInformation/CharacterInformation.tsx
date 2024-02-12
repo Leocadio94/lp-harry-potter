@@ -1,9 +1,13 @@
 import { CiUser } from "react-icons/ci";
-import { GiHarryPotterSkull, GiStagHead } from "react-icons/gi";
+import { GiHarryPotterSkull, GiStagHead, GiWizardStaff } from "react-icons/gi";
 import { IoCalendarOutline } from "react-icons/io5";
 import { Character } from "../../../typings/typings";
 import { renderHarryPotterHouseIcon } from "../../../utils/renderHarryPotterHouseIcon";
-import { transformDate, translateHarryPotterHouse } from "../../../utils/utils";
+import {
+  transformDate,
+  translateHarryPotterHouse,
+  translateHarryPotterPatronus,
+} from "../../../utils/utils";
 
 interface CharacterInformationProps {
   character?: Character;
@@ -25,23 +29,29 @@ const CharacterInformation = ({ character }: CharacterInformationProps) => {
       )}
 
       <div className="characters-information__text">
-        <p className="characters-information__text-content characters-information__house">
-          <span className="characters-information__text-icon">
-            {renderHarryPotterHouseIcon(character?.house)}
-          </span>{" "}
-          <strong className="characters-information__text-label">Casa:</strong>{" "}
-          {translateHarryPotterHouse(character?.house)}
-        </p>
+        {character?.house && (
+          <p className="characters-information__text-content characters-information__house">
+            <span className="characters-information__text-icon">
+              {renderHarryPotterHouseIcon(character?.house)}
+            </span>{" "}
+            <strong className="characters-information__text-label">
+              Casa:
+            </strong>{" "}
+            {translateHarryPotterHouse(character?.house)}
+          </p>
+        )}
 
-        <p className="characters-information__text-content characters-information__date-of-birth">
-          <span className="characters-information__text-icon">
-            <IoCalendarOutline />
-          </span>{" "}
-          <strong className="characters-information__text-label">
-            Data de Nascimento:
-          </strong>{" "}
-          {character?.dateOfBirth && transformDate(character?.dateOfBirth)}
-        </p>
+        {character?.dateOfBirth && (
+          <p className="characters-information__text-content characters-information__date-of-birth">
+            <span className="characters-information__text-icon">
+              <IoCalendarOutline />
+            </span>{" "}
+            <strong className="characters-information__text-label">
+              Data de Nascimento:
+            </strong>{" "}
+            {character?.dateOfBirth && transformDate(character?.dateOfBirth)}
+          </p>
+        )}
 
         <p className="characters-information__text-content characters-information__alive">
           <span className="characters-information__text-icon">
@@ -50,25 +60,54 @@ const CharacterInformation = ({ character }: CharacterInformationProps) => {
           <strong className="characters-information__text-label">
             Estado:
           </strong>{" "}
-          {character?.alive ? "Vivo" : "Morto"}
+          {character?.alive
+            ? character?.gender === "male"
+              ? "Vivo"
+              : "Viva"
+            : character?.gender === "male"
+            ? "Morto"
+            : "Morta"}
         </p>
 
-        <p className="characters-information__text-content characters-information__patronus">
+        {character?.patronus && (
+          <p className="characters-information__text-content characters-information__patronus">
+            <span className="characters-information__text-icon">
+              <GiStagHead />
+            </span>{" "}
+            <strong className="characters-information__text-label">
+              Patrono:
+            </strong>{" "}
+            {translateHarryPotterPatronus(character?.patronus?.toLowerCase())}
+          </p>
+        )}
+
+        {character?.actor && (
+          <p className="characters-information__text-content characters-information__actor">
+            <span className="characters-information__text-icon">
+              <CiUser />
+            </span>{" "}
+            <strong className="characters-information__text-label">
+              Ator:
+            </strong>{" "}
+            {character?.actor}
+          </p>
+        )}
+
+        <p className="characters-information__text-content characters-information__gender">
           <span className="characters-information__text-icon">
-            <GiStagHead />
+            <GiHarryPotterSkull />
           </span>{" "}
           <strong className="characters-information__text-label">
-            Patrono:
+            Gênero:
           </strong>{" "}
-          {character?.patronus || "Não possui"}
+          {character?.gender === "male" ? "Homem" : "Mulher"}
         </p>
 
-        <p className="characters-information__text-content characters-information__actor">
+        <p className="characters-information__text-content characters-information__wizard">
           <span className="characters-information__text-icon">
-            <CiUser />
+            <GiWizardStaff />
           </span>{" "}
-          <strong className="characters-information__text-label">Ator:</strong>{" "}
-          {character?.actor}
+          {character?.wizard ? "Bruxo" : "Trouxa"}
         </p>
       </div>
     </div>

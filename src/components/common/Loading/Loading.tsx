@@ -11,9 +11,15 @@ const Loading = () => {
     },
   };
 
+  const isMobile = window.innerWidth < 768;
+
   return (
     <div className="loading">
-      <Lottie options={defaultOptions} height={400} width={400} />
+      <Lottie
+        options={defaultOptions}
+        height={isMobile ? 100 : 400}
+        width={isMobile ? 100 : 400}
+      />
     </div>
   );
 };

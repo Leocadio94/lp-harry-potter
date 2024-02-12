@@ -1,4 +1,5 @@
 import { Outlet } from "react-router-dom";
+import BackToTop from "../components/common/BackToTop";
 import Footer from "./Footer";
 import Header from "./Header";
 
@@ -12,6 +13,8 @@ export default function Root() {
       </main>
 
       <Footer />
+
+      <BackToTop />
     </>
   );
 }
