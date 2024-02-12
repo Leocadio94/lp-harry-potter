@@ -87,7 +87,7 @@ const CharacterInformation = ({ character }: CharacterInformationProps) => {
               <CiUser />
             </span>{" "}
             <strong className="characters-information__text-label">
-              Ator:
+              {character?.gender === "male" ? "Ator" : "Atriz"}:
             </strong>{" "}
             {character?.actor}
           </p>

@@ -97,7 +97,7 @@ const CharactersList = ({ characters }: CharacterListProps) => {
                       <CiUser />
                     </span>{" "}
                     <strong className="characters-list__text-label">
-                      Ator:
+                      {character?.gender === "male" ? "Ator" : "Atriz"}:
                     </strong>{" "}
                     {character?.actor}
                   </p>
