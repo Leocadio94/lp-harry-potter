@@ -17,6 +17,13 @@
 #root {
   width: 100%;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -68,4 +75,8 @@ li {
   max-width: 1366px;
   margin: 0 auto;
   box-sizing: border-box;
+}
+
+main.container {
+  flex-grow: 1;
 }
